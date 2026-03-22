@@ -1,0 +1,10 @@
+services:
+  code-server:
+    image: codercom/code-server:latest
+    environment:
+      - PASSWORD=${PASSWORD:-changeme}
+    volumes:
+      - /data/coolify/applications/shared-storage:/home/coder/project
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
